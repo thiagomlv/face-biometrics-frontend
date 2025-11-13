@@ -1,0 +1,16 @@
+services:
+
+  # ==========================
+  #   Frontend
+  # ==========================
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: thiagomlv/faceid-frontend:latest
+    container_name: frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:80"
+    tty: true
